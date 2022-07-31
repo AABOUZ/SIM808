@@ -9,11 +9,11 @@
 #define gpsPin 5
 SoftwareSerial mySerial(7, 8); //Sim808 UART connected to software serial pins 2,3. Tx to Rx and Rx to Tx.
 /*------------- USER INPUT --------------------------------*/
-char* deviceName = "app.aabouz@gmail.com";//use a unique client name for your device
+char* deviceName = "************";//use a unique client name for your device
 char* mqttBroker = "mqtt.dioty.co"; // mqtt broker ip or URL
 char* mqttPort = "1883"; //mqtt broker port
-char* mqttTopic = "/app.aabouz@gmail.com/";//topic to which you want to publish
-String sosNum = "ATD0695061182;";
+char* mqttTopic = "***********";//topic to which you want to publish
+String sosNum = "ATD************;";
 /*---------------------------------------------------------*/
 char type[32], no1[32], no2[32], date[32], lat[32], lon[32], no3[32], Speed[32], no4[32], no5[32] , no6[32], no7[32], no8[32], Satt[32];
 
@@ -271,7 +271,7 @@ void call(void)
 {
   sendData( "AT+CSQ", 1000, DEBUG);//check signal quality
   Serial.println("Making a call!");
-  mySerial.println("ATD0695061182;"); // xxxxxxxxx is the number you want to dial.
+  mySerial.println("ATD********;"); // xxxxxxxxx is the number you want to dial.
   if (mySerial.available())
     Serial.print((unsigned char)mySerial.read());
 }
